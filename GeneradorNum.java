@@ -9,7 +9,7 @@ public class GeneradorNum {
 			 num= num+" "+String. valueOf(numero);
 			
 		}
-		
+		 num= num+" ";
 		
 		
 		return num;
@@ -23,9 +23,24 @@ public class GeneradorNum {
 		for( int i=0 ; i <op.length(); i++) {
 			
 			char ope= op.charAt(i);
-			
+			String valor=String.valueOf(ope);
 			if(ope!=espacio) {
-				lis[cont]=Character.getNumericValue(ope);
+				
+				boolean llave= false;
+				int contador2=i;
+				if(i<op.length()-1) {
+				llave= true;}
+				while (llave==true) {
+					contador2= contador2+1;
+					if(op.charAt(contador2)!=espacio) {
+						 valor=valor+String.valueOf(op.charAt(contador2));
+						 
+					}
+					else {llave=false;}
+					i=contador2;
+				}
+					
+				lis[cont]=Integer.valueOf(valor);
 				cont=cont+1;
 		
 	}
