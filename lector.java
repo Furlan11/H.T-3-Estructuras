@@ -7,6 +7,12 @@ import javax.swing.JOptionPane;
 
 
 public class lector {
+	
+	/**
+	 * metodo para escribir el archivoo
+	 * @param direccion la direccion donde se encuentra el archivo con la operacion
+	 * @return String con el resultado o eltexto del documento
+	 */
 	public void Escribir(String texto) {
 		File f;
 		FileWriter w;

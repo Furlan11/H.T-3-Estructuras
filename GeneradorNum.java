@@ -1,6 +1,11 @@
 
 public class GeneradorNum {
-	
+	/**
+	 *metodo generar numeros enteros
+	 * @param cant la cantidad de numeros radnom que se desean
+	 * @return num un string con todos los numeros generados
+	 *  
+	 */
 	public String Generar(int cant) {
 		String num = "";
 		int numero=0;
@@ -14,6 +19,13 @@ public class GeneradorNum {
 		
 		return num;
 	}
+	/**
+	 *metodo genera una lista 
+	 * @param op es un String que tiene los enteros que se quieren listar
+	 * @param num es la cantidad de nuemrios en la lisa
+	 * @return lis una lista de enteros desordenada
+	 *  
+	 */
 	public Integer[] listarNum(String op,int num) {
 		
 		Integer[] lis= new Integer[num];

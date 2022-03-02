@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"GeneradorNum","l":"GeneradorNum()","url":"%3Cinit%3E()"},{"p":"<Unnamed>","c":"GeneradorNum","l":"Generar(int)"},{"p":"<Unnamed>","c":"GeneradorNum","l":"listarNum(String, int)","url":"listarNum(java.lang.String,int)"}]

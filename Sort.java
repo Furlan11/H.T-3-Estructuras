@@ -1,5 +1,10 @@
 import java.util.Comparator;
-
+/**
+ * una clase para crear un calculadora que recibe operacion en postfix
+ * @author Guillermo Furlan 20713 
+ *  @author Wilfredo Gallegos
+ * @author Alejandro Pallais
+ */
 public class Sort<T> {
 public Comparator myCompare;
 	
@@ -12,6 +17,12 @@ public Comparator myCompare;
 	public Sort(Comparator _Compare) {
 		myCompare = _Compare;
 	}
+	
+	/**
+	 *Este metodo ordena una lista mediante el algoritmo gnomsort
+	 * @param _Compare a class that implements IComparator interface necessary
+	 * to know how compare the elements of generic arrays. 
+	 */
 	
 	public void gnomeSort(Integer[] nums)
 	  {
@@ -33,7 +44,7 @@ public Comparator myCompare;
 	  /***
 		 * Sorts the specified array of objects using the insertion
 		 * sort algorithm.
-		 * @param myArray List of elements need to be sorted
+		 * @param myArray lista de elemntos que se van a ordenar
 		 */
 	   public void insertionSort (T[] myArray)
 	   {
@@ -53,11 +64,10 @@ public Comparator myCompare;
 	      }
 	   }
 	
-	/***
-	 * Sorts the specified array of objects using the bubble
-	 * sort algorithm.
-	 * @param myArray List of elements need to be sorted
-	 */
+	   /***
+		 * metodo que ordena una lista mediante el meotdo de buublesort
+		 * @param myArray lista de elemntos que se van a ordenar
+		 */
 	public void BubbleSort(T[] myArray) {
 		for (int i = 0; i < myArray.length - 1; i++) {					// n
 			for (int j = i + 1; j < myArray.length; j++) {				// n
@@ -69,6 +79,12 @@ public Comparator myCompare;
 			}
 		}
 	}
+	 /***
+	 * metodo que ordena una lista mediante el meotdo de buublesort
+	 * @param myArray lista de elemntos que se van a ordenar
+	 * @param izq es desde que punto de la lista se empieza a ordenar, 
+	 * @param der es hasta que indice de la lista se va aordenr
+	 */
 	public static void merge(Integer A[],int izq, int m, int der){
 		   int i, j, k;
 		   int [] B = new int[A.length]; //array auxiliar
@@ -86,6 +102,12 @@ public Comparator myCompare;
 		   while (i<=m)         //copia los elementos que quedan de la
 		         A[k++]=B[i++]; //primera mitad (si los hay)
 		}
+	/***
+	 * metodo que ordena una lista mediante el meotdo de mergekSort
+	 * @param myArray lista de elemntos que se van a ordenar,
+	 * @param izq es desde que punto de la lista se empieza a ordenar, 
+	 * @param der es hasta que indice de la lista se va aordenr
+	 */
 	public static void mergeSort(Integer A[],int izq, int der){
 	    if (izq < der){
 	            int m=(izq+der)/2;
@@ -94,6 +116,13 @@ public Comparator myCompare;
 	            merge(A,izq, m, der);                                                                                 
 	    }
 	}
+	/***
+	 * metodo que ordena una lista mediante el meotdo de quickSort
+	 * @param myArray lista de elemntos que se van a ordenar,
+	 * @param inf es desde que punto de la lista se empieza a ordenar, 
+	 * @param der es hasta que indice de la lista se va aordenr
+	 */
+	
 	 public void quickSort(T[] myArray, int inf, int sup) {
 		   int i = inf - 1;
 		   int j = sup;
