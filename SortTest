@@ -1,0 +1,290 @@
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+public class SortTest {
+    
+    public SortTest() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+
+    /**
+     * Test of gnomeSort method, of class Sort.
+     */
+    @Test
+    public void testGnomeSort() {
+        System.out.println("gnomeSort");
+        Sort instance = new Sort(new CompareInt());
+        Integer[] A = new Integer[3];
+        A[0]=3;
+        A[1]=8;
+        A[2]=1;
+        Integer[] B = new Integer[3];
+        B[0]=3;
+        B[1]=8;
+        B[2]=1;
+        instance.gnomeSort(A);
+        assertEquals(A[0],B[2]);
+        assertEquals(A[1],B[0]);
+        assertEquals(A[2],B[1]);
+    }
+    @Test
+    public void testGnomeSortPar() {
+        System.out.println("gnomeSort para una cantidad par de elementos");
+        Sort instance = new Sort(new CompareInt());
+        Integer[] A = new Integer[4];
+        A[0]=3;
+        A[1]=8;
+        A[2]=1;
+        A[3]=2;
+        Integer[] B = new Integer[4];
+        B[0]=3;
+        B[1]=8;
+        B[2]=1;
+        B[3]=2;
+        instance.gnomeSort(A);
+        assertEquals(A[0],B[2]);
+        assertEquals(A[1],B[3]);
+        assertEquals(A[2],B[0]);
+        assertEquals(A[3],B[1]);
+    }
+    @Test
+    public void testGnomeSortUnico() {
+        System.out.println("gnomeSort para un unico elemento");
+        Sort instance = new Sort(new CompareInt());
+        Integer[] A = new Integer[1];
+        A[0]=3;
+        Integer[] B = new Integer[1];
+        B[0]=3;
+        instance.gnomeSort(A);
+        assertEquals(A[0],B[0]);
+    }
+
+    /**
+     * Test of insertionSort method, of class Sort.
+     */
+    @Test
+    public void testInsertionSortImpar() {
+        System.out.println("insertionSort para una cantidad impar");
+        Sort instance = new Sort(new CompareInt());
+        Integer[] A = new Integer[3];
+        A[0]=3;
+        A[1]=8;
+        A[2]=1;
+        Integer[] B = new Integer[3];
+        B[0]=3;
+        B[1]=8;
+        B[2]=1;
+        instance.insertionSort(A);
+        assertEquals(A[0],B[2]);
+        assertEquals(A[1],B[0]);
+        assertEquals(A[2],B[1]);
+    }
+    @Test
+    public void testInsertionSortPar() {
+        System.out.println("insertionSort para una cantidad par");
+        Sort instance = new Sort(new CompareInt());
+        Integer[] A = new Integer[4];
+        A[0]=3;
+        A[1]=8;
+        A[2]=1;
+        A[3]=0;
+        Integer[] B = new Integer[4];
+        B[0]=3;
+        B[1]=8;
+        B[2]=1;
+        B[3]=0;
+        instance.insertionSort(A);
+        assertEquals(A[0],B[3]);
+        assertEquals(A[1],B[2]);
+        assertEquals(A[2],B[0]);
+        assertEquals(A[3],B[1]);
+    }
+    @Test
+    public void testInsertionSortUnica() {
+        System.out.println("insertionSort para una cantidad de 1");
+        Sort instance = new Sort(new CompareInt());
+        Integer[] A = new Integer[1];
+        A[0]=3;
+        Integer[] B = new Integer[1];
+        B[0]=3;
+        instance.insertionSort(A);
+        assertEquals(A[0],B[0]);
+    }
+
+    /**
+     * Test of BubbleSort method, of class Sort.
+     */
+    @Test
+    public void testBubbleSortImpar() {
+        System.out.println("BubbleSortpara una cantidad impar");
+        Sort instance = new Sort(new CompareInt());
+        Integer[] A = new Integer[3];
+        A[0]=3;
+        A[1]=8;
+        A[2]=1;
+        Integer[] B = new Integer[3];
+        B[0]=3;
+        B[1]=8;
+        B[2]=1;
+        instance.BubbleSort(A);
+        assertEquals(A[0],B[2]);
+        assertEquals(A[1],B[0]);
+        assertEquals(A[2],B[1]);
+    }
+    @Test
+    public void testBubbleSortPar() {
+        System.out.println("BubbleSortpara una cantidad par");
+        Sort instance = new Sort(new CompareInt());
+        Integer[] A = new Integer[4];
+        A[0]=3;
+        A[1]=8;
+        A[2]=1;
+        A[3]=5;
+        Integer[] B = new Integer[4];
+        B[0]=3;
+        B[1]=8;
+        B[2]=1;
+        B[3]=5;
+        instance.BubbleSort(A);
+        assertEquals(A[0],B[2]);
+        assertEquals(A[1],B[0]);
+        assertEquals(A[2],B[3]);
+        assertEquals(A[3],B[1]);
+    }
+    @Test
+    public void testBubbleSortUnico() {
+        System.out.println("BubbleSortpara una cantidad unica de datos");
+        Sort instance = new Sort(new CompareInt());
+        Integer[] A = new Integer[1];
+        A[0]=3;
+        Integer[] B = new Integer[1];
+        B[0]=3;
+        instance.BubbleSort(A);
+        assertEquals(A[0],B[0]);
+    }
+
+    /**
+     * Test of mergeSort method, of class Sort.
+     */
+    @Test
+    public void testMergeSortImpar() {
+        System.out.println("mergeSort para cantodad impar");
+        Integer[] A = new Integer[3];
+        A[0]=3;
+        A[1]=8;
+        A[2]=1;
+        Integer[] B = new Integer[3];
+        B[0]=3;
+        B[1]=8;
+        B[2]=1;
+        int izq = 0;
+        int der = A.length-1;
+        Sort.mergeSort(A, izq, der);
+        assertEquals(A[0],B[2]);
+        assertEquals(A[1],B[0]);
+        assertEquals(A[2],B[1]);
+    }
+    @Test
+    public void testMergeSortPar() {
+        System.out.println("mergeSort para cantodad par");
+        Integer[] A = new Integer[4];
+        A[0]=3;
+        A[1]=8;
+        A[2]=1;
+        A[3]=7;
+        Integer[] B = new Integer[4];
+        B[0]=3;
+        B[1]=8;
+        B[2]=1;
+        B[3]=7;
+        int izq = 0;
+        int der = A.length-1;
+        Sort.mergeSort(A, izq, der);
+        assertEquals(A[0],B[2]);
+        assertEquals(A[1],B[0]);
+        assertEquals(A[2],B[3]);
+        assertEquals(A[3],B[1]);
+    }
+    @Test
+    public void testMergeSortUnico() {
+        System.out.println("mergeSort para 1 dato");
+        Integer[] A = new Integer[1];
+        A[0]=3;
+        Integer[] B = new Integer[1];
+        B[0]=3;
+        int izq = 0;
+        int der = A.length-1;
+        Sort.mergeSort(A, izq, der);
+        assertEquals(A[0],B[0]);
+    }
+
+    /**
+     * Test of quickSort method, of class Sort.
+     */
+    @Test
+    public void testQuickSortPar() {
+        System.out.println("quickSort con cantidad par");
+        Integer[] myArray = new Integer[4];
+        Integer[] miArreglo = new Integer[4];
+        int inf = 0;
+        int sup = myArray.length-1;
+        myArray[0]=3;
+        myArray[1]=1;
+        myArray[2]=7;
+        miArreglo[0]=3;
+        myArray[3]=6;
+        miArreglo[3]=6;
+        miArreglo[1]=1;
+        miArreglo[2]=7;
+        Sort instance = new Sort(new CompareInt());
+        instance.quickSort(myArray, inf, sup);
+        assertEquals(myArray[0],miArreglo[1]);
+        assertEquals(myArray[1],miArreglo[0]);
+        assertEquals(myArray[2],miArreglo[3]);
+        assertEquals(myArray[3],miArreglo[2]);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    @Test
+    public void testQuickSortImpar() {
+        System.out.println("quickSort con cantidad impar");
+        Integer[] myArray = new Integer[3];
+        Integer[] miArreglo = new Integer[3];
+        int inf = 0;
+        int sup = myArray.length-1;
+        myArray[0]=3;
+        myArray[1]=1;
+        myArray[2]=7;
+        miArreglo[0]=3;
+        miArreglo[1]=1;
+        miArreglo[2]=7;
+        Sort instance = new Sort(new CompareInt());
+        instance.quickSort(myArray, inf, sup);
+        assertEquals(myArray[0],miArreglo[1]);
+        assertEquals(myArray[1],miArreglo[0]);
+        assertEquals(myArray[2],miArreglo[2]);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    @Test
+    public void testQuickSortUnico() {
+        System.out.println("quickSort con cantidad 1");
+        Integer[] myArray = new Integer[1];
+        Integer[] miArreglo = new Integer[1];
+        int inf = 0;
+        int sup = myArray.length-1;
+        myArray[0]=3;
+        miArreglo[0]=3;
+        Sort instance = new Sort(new CompareInt());
+        instance.quickSort(myArray, inf, sup);
+        assertEquals(myArray[0],miArreglo[0]);
+        // TODO review the generated test code and remove the default call to fail.
+    }
+    
+}
