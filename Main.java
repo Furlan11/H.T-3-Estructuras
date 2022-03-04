@@ -9,7 +9,7 @@ public class Main {
 		GeneradorNum generador= new GeneradorNum();
 		lector.Escribir("prueba");
 		
-		System.out.println("Ingrese cuanto snumeros aleatorios desea crear"
+		System.out.println("Ingrese cuantos numeros aleatorios desea crear"
 				);
 		int op=teclado.nextInt();
 		teclado.nextLine();
@@ -23,7 +23,7 @@ public class Main {
 				+ "3. GnomSort \n"
 				+ "4.MergeSort\n"
 				+ "5. insertionSort \n"
-				+ "marque numero de su ocpion"
+				+ "marque numero de su opcion"
 				);
 		int op1=teclado.nextInt();
 		
